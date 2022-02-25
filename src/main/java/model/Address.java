@@ -1,14 +1,26 @@
 /**
  * @author Spencer Cress - scress
  * CIS175 - Spring 2022
- * Feb 22, 2022
+ * Feb 24, 2022
  */
-package main.java.model;
+package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//keep this delete other
+@Entity
+@Table(name="address")
 public class Address {
+	@Id
+	@GeneratedValue
+	@Column(name="ID")
 	private int id;
 	private String name;
-	private String address;
+	private String address; // may want to consider changing this to street, property address within class address confusing
 	// space for other fields
 	
 	
@@ -42,6 +54,4 @@ public class Address {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-
 }
